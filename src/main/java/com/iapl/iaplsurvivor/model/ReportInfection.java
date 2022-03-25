@@ -13,7 +13,7 @@ import javax.persistence.*;
 
 public class ReportInfection {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
 
     @OneToOne

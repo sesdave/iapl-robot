@@ -23,17 +23,17 @@ import java.util.Date;
         allowGetters = true)
 public class Survivor {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
-    @NotNull(message = "Please enter id")
+    @NotNull(message = "Please enter name")
     private String name;
-    @NotNull(message = "Please enter id")
+    @NotNull(message = "Please enter age")
     private int age;
-    @NotNull(message = "Please enter id")
+    @NotNull(message = "Please enter gender")
     private String gender;
-    @NotNull(message = "Please enter id")
+    @NotNull(message = "Please enter longitude")
     private String longitude;
-    @NotNull(message = "Please enter id")
+    @NotNull(message = "Please enter latitude")
     private String latitude;
     //@Column(name="Price", columnDefinition="Decimal(10,2) default '100.00'")
     private boolean has_food=true;
