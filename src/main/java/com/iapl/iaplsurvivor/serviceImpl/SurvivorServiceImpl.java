@@ -1,5 +1,6 @@
 package com.iapl.iaplsurvivor.serviceImpl;
 
+import com.iapl.iaplsurvivor.util.LocationChangeRequest;
 import com.iapl.iaplsurvivor.util.PercentageResponse;
 import com.iapl.iaplsurvivor.util.RestResponse;
 import com.iapl.iaplsurvivor.model.Survivor;
@@ -24,16 +25,16 @@ public class SurvivorServiceImpl implements SurvivorService {
         return repository.findAll();
     }
 
-    public RestResponse updateSurvivorLocation(Survivor survivor){
+    public RestResponse updateSurvivorLocation(LocationChangeRequest location, int Id){
         RestResponse restResponse=new RestResponse();
-        Survivor existSurvivor=repository.findById(survivor.getID()).orElse(null);
+        Survivor existSurvivor=repository.findById(Id).orElse(null);
         if(existSurvivor==null){
             restResponse.setData("Survivor does not exits");
             return restResponse;
         }
-        existSurvivor.setLatitude(survivor.getLatitude());
-        existSurvivor.setLongitude(survivor.getLongitude());
-        repository.save(survivor);
+        existSurvivor.setLatitude(location.getLatitude());
+        existSurvivor.setLongitude(location.getLongitude());
+        repository.save(existSurvivor);
         restResponse.setStatus(true);
         restResponse.setData(existSurvivor);
         return restResponse;

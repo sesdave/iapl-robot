@@ -1,5 +1,6 @@
 package com.iapl.iaplsurvivor.controller;
 
+import com.iapl.iaplsurvivor.util.LocationChangeRequest;
 import com.iapl.iaplsurvivor.util.RestResponse;
 import com.iapl.iaplsurvivor.model.Survivor;
 import com.iapl.iaplsurvivor.service.SurvivorService;
@@ -26,9 +27,9 @@ public class SurvivorController {
         return service.allSurvivors();
     }
 
-    @PutMapping("/update_location")
-    public RestResponse updateLocation(@RequestBody Survivor survivor){
-        return service.updateSurvivorLocation(survivor);
+    @PutMapping("/update_location/{id}")
+    public RestResponse updateLocation(@PathVariable(value = "id") int Id,  @RequestBody LocationChangeRequest location){
+        return service.updateSurvivorLocation(location, Id);
     }
 
     @GetMapping("/percentage-infected")
