@@ -64,4 +64,4 @@ You can test them using postman or any other rest client.
 
 document is published on postman and url is -
 
-<https://www.callicoder.com/spring-boot-rest-api-tutorial-with-mysql-jpa-hibernate/>
+<https://documenter.getpostman.com/view/7170305/UVsTriLS/>
