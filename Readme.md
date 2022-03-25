@@ -1,4 +1,4 @@
-# Spring Boot, MySQL, JPA, Hibernate Rest API Tutorial
+# Spring Boot, MySQL, JPA, Hibernate Rest API 
 
 Build Restful CRUD API for Iapl Robot application using Spring Boot, Mysql, JPA and Hibernate.
 
@@ -33,7 +33,7 @@ create database iaplsurvivor
 
 ```bash
 mvn package
-java -jar target/easy-notes-1.0.0.jar
+java -jar target/iapl-robot-1.0.0.jar
 ```
 
 Alternatively, you can run the app without packaging it using -
@@ -42,13 +42,13 @@ Alternatively, you can run the app without packaging it using -
 mvn spring-boot:run
 ```
 
-The app will start running at <http://localhost:8080>.
+The app will start running at <http://localhost:9191>.
 
 ## Explore Rest APIs
 
 The app defines following CRUD APIs.
 
-    GET /api/notes
+    GET /api/survivors
     
     POST /api/add_survivor
     
