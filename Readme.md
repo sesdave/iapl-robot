@@ -20,7 +20,7 @@ git clone https://github.com/sesdave/iapl-robot.git
 
 **2. Create Mysql database**
 ```bash
-create database iaplsurvivor
+create database heroku_8be0d9ec475e341
 ```
 
 **3. Change mysql username and password as per your installation**

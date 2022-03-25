@@ -23,7 +23,7 @@ import java.util.Date;
         allowGetters = true)
 public class Survivor {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int ID;
     @NotNull(message = "Please enter id")
     private String name;
