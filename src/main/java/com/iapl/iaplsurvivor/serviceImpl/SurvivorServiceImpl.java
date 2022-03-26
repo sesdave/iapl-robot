@@ -9,6 +9,7 @@ import com.iapl.iaplsurvivor.service.SurvivorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +17,8 @@ import java.util.stream.Collectors;
 public class SurvivorServiceImpl implements SurvivorService {
     @Autowired
     private SurvivorRepository repository;
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public Survivor saveSurvivor(Survivor survivor){
         return repository.save(survivor);
@@ -47,7 +50,7 @@ public class SurvivorServiceImpl implements SurvivorService {
                     .collect(Collectors
                          .averagingDouble(
                                 num -> num.isInfected()?1:0));
-        String percentage= value * 100 +"%";
+        String percentage= df.format(value * 100) +"%";
         PercentageResponse response=new PercentageResponse(true, percentage);
         restResponse.setStatus(true);
         restResponse.setData(response);
@@ -61,7 +64,7 @@ public class SurvivorServiceImpl implements SurvivorService {
                 .collect(Collectors
                         .averagingDouble(
                                 num -> !num.isInfected()?1:0));
-        String percentage= value * 100 +"%";
+        String percentage= df.format(value * 100) +"%";
         PercentageResponse response=new PercentageResponse(true, percentage);
         restResponse.setStatus(true);
         restResponse.setData(response);
