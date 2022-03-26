@@ -46,17 +46,25 @@ The app will start running at <http://localhost:9191>.
 
 ## Explore Rest APIs
 
-The app defines following CRUD APIs.
+The app defines following APIs.
 
     GET /api/survivors
     
     POST /api/add_survivor
+
+    PUT /api/api/update_location/{id}
+
+    POST /api/make-report
     
     GET /api/percentage-infected
     
-    PUT /api/uninfected-survivors
+    GET /api/uninfected-survivors
+
+    GET /api/uninfected-survivors
+
+    GET /api/infected-survivors
     
-    DELETE /api/robots
+    GET /api/robots
 
 You can test them using postman or any other rest client.
 
